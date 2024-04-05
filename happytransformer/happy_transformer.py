@@ -64,7 +64,7 @@ class HappyTransformer():
         # this as we need to specify number of labels.
 
         config = AutoConfig.from_pretrained(model_name_path, use_auth_token=use_auth_token, trust_remote_code=trust_remote_code)
-        model = model_class.from_pretrained(model_name_path, config=config, use_auth_token=use_auth_token, trust_remote_code=trust_remote_code)
+        model = model_class.from_pretrained(model_name_path, config=config, use_auth_token=use_auth_token, trust_remote_code=trust_remote_code, load_in_8bit=True)
         tokenizer = AutoTokenizer.from_pretrained(model_name_path, use_auth_token=use_auth_token, trust_remote_code=trust_remote_code)
 
         return config, tokenizer, model
